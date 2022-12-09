@@ -125,7 +125,7 @@ const italicsBtn = document.querySelector(".italics")
 const colorSelector = document.querySelector(".color-btn")
 
 
-
+//Text edit functionality
 boldBtn.addEventListener("click", function(){
     document.execCommand("bold")
 })
@@ -140,6 +140,24 @@ italicsBtn.addEventListener("click", function(){
 
 colorSelector.addEventListener("input", function(){
     document.execCommand("forecolor", false, colorSelector.value)
+})
+
+
+
+const fileNameInput = document.getElementById("file-name")
+const content = document.querySelector(".content-container")
+
+
+//Save file as
+const saveText = document.querySelector(".save-text")
+
+saveText.addEventListener("click", function(){
+    const atag = document.createElement('a')
+    const blob = new Blob([content.innerText])
+    const dataUrl = URL.createObjectURL(blob)
+    atag.href = dataUrl
+    atag.download = fileNameInput.value + ".txt"
+    atag.click()
 })
 
 

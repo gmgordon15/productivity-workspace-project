@@ -109,7 +109,7 @@ h1{
     flex-direction: column;
     height: 80%;
     width: 40%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
     align-items: center;
     border-radius: 10px;
     transform: translate(-50%, -10%);
@@ -160,3 +160,27 @@ h1{
     cursor: grab;
 }
 
+.main-file{
+    background-color: rgb(85, 85, 202);
+    width: 85px;
+    height: 30px;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    
+}
+
+.file-menu{
+    position: relative;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+}
+
+.file-menu:hover .dropdown-menu{
+    display: block;
+}

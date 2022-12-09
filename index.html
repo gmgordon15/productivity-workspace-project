@@ -27,9 +27,11 @@
         <div class="header">
             <div class="menu-container">
                 <div class="file-menu">
-                    <button class="file">File</button>
-                    <button class="file">Save as Text</button>
-                    <button class="file">Save as PDF</button>
+                    <button class="file main-file">File</button>
+                    <div class="dropdown-menu hide-menu">
+                        <button class="file dropdown save-text">Save as Text</button>
+                        <button class="file dropdown save-pdf" >Save as PDF</button>
+                    </div>
                 </div>
 
                 <input type="text" placeholder="File Name" id="file-name">
