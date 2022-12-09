@@ -162,6 +162,66 @@ saveText.addEventListener("click", function(){
 
 
 
+//Time and Date
+
+//Time
+function displayTime(){
+    const t = new Date();
+    const localtime = t.toLocaleTimeString()
+    document.querySelector(".test").innerHTML = localtime
+}
+
+
+
+window.addEventListener("DOMContentLoaded", function(){
+    setInterval(displayTime, 10);
+})
+
+
+
+
+//Get Date
+window.addEventListener("DOMContentLoaded", function(){
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    const newDate = new Date();
+    let displayMonth = month[newDate.getUTCMonth()]
+
+    document.querySelector(".month").innerHTML = displayMonth
+
+
+    let displayDay = newDate.getUTCDate();
+    document.querySelector(".date").innerHTML = displayDay
+
+
+    let displayYear = newDate.getUTCFullYear()
+    document.querySelector(".year").innerHTML = displayYear
+})
+
+
+
+
+//Drag Function for Time/Date
+let dateContainer = document.querySelector(".time-date-container")
+
+
+function dragDate(e){
+    dateContainer.style.top = e.pageY + "px";
+    dateContainer.style.left = e.pageX + "px";
+}
+
+dateContainer.addEventListener("mousedown", function(){
+    window.addEventListener("mousemove", dragDate)
+})
+
+window.addEventListener("mouseup", () => {
+    window.removeEventListener("mousemove", dragDate);
+  });
+
+
+
+
+
+
 
 
 

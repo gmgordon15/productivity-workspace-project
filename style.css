@@ -10,7 +10,7 @@
     width: 20%;
     position: absolute;
     left: 300px;
-    top:400px;
+    top:500px;
     overflow: auto;
     align-items: center;
     transform: translate(-50%,-50%);
@@ -103,7 +103,7 @@ h1{
 
 .word-process-container{
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 800px;
     display: flex;
     flex-direction: column;
@@ -113,6 +113,7 @@ h1{
     align-items: center;
     border-radius: 10px;
     transform: translate(-50%, -10%);
+    overflow: scroll;
 }
 
 .menu-container{
@@ -144,6 +145,7 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     padding:2%;
+    overflow: scroll;
 }
 
 
@@ -183,4 +185,23 @@ h1{
 
 .file-menu:hover .dropdown-menu{
     display: block;
+}
+
+
+.time-date-container{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 10%;
+    align-items: center;
+    border: 2px solid black;
+    position: absolute;
+    left:800px;
+    top:100px;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+.date-container{
+    margin-bottom: 3%;
 }
