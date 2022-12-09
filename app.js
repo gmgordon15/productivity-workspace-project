@@ -1,3 +1,4 @@
+//Drag Functionality for Todo
 // Bring in div
 const mydiv = document.querySelector(".todo-container")
 
@@ -18,8 +19,6 @@ window.addEventListener("mouseup", () => {
 
 
 //Todolist
-
-
 //Bring in Dom elements:
 let todoInput = document.querySelector(".todo-input")
 let todoSubmit = document.querySelector(".submit-button")
@@ -100,6 +99,55 @@ doneButton.addEventListener("click", doneToDo)
   }
 
 }
+
+
+//Word Processor 
+const wordProcessorContainer = document.querySelector(".word-process-container")
+const header = document.querySelector(".header")
+//Drag functionality for Word processor
+function dragWord(e){
+    wordProcessorContainer.style.top = e.pageY + "px";
+    wordProcessorContainer.style.left = e.pageX + "px";
+}
+
+header.addEventListener("mousedown", function(){
+    window.addEventListener("mousemove", dragWord)
+})
+
+window.addEventListener("mouseup", () => {
+    window.removeEventListener("mousemove", dragWord);
+  });
+
+
+const boldBtn = document.querySelector(".bold")
+const underlineBtn = document.querySelector(".underline")
+const italicsBtn = document.querySelector(".italics")
+const colorSelector = document.querySelector(".color-btn")
+
+
+
+boldBtn.addEventListener("click", function(){
+    document.execCommand("bold")
+})
+
+underlineBtn.addEventListener("click", function(){
+    document.execCommand("underline")
+})
+
+italicsBtn.addEventListener("click", function(){
+    document.execCommand("italic")
+})
+
+colorSelector.addEventListener("input", function(){
+    document.execCommand("forecolor", false, colorSelector.value)
+})
+
+
+
+
+
+
+  
 
 
 
