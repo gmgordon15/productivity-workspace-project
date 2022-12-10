@@ -9,8 +9,8 @@
     height: 70%;
     width: 20%;
     position: absolute;
-    left: 300px;
-    top:500px;
+    left: 200px;
+    top: 450px;
     overflow: auto;
     align-items: center;
     transform: translate(-50%,-50%);
@@ -18,6 +18,7 @@
     flex-direction: column;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: 1;
 } 
 
 .todo-container:hover{
@@ -58,18 +59,17 @@ h1{
     padding-left: 3%;
     padding-top: 1px;
     display: flex;
-    overflow-wrap: break-word;
-    overflow-wrap: break-word;
-    width: 100%;
+    
+    max-width: 75%;
 }
 
 
 .New-Todo li{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     flex-basis: 100%;
+    overflow: scroll;
 
 }
 
@@ -104,7 +104,7 @@ h1{
 .word-process-container{
     position: absolute;
     top: 200px;
-    left: 800px;
+    left: 700px;
     display: flex;
     flex-direction: column;
     height: 80%;
@@ -125,6 +125,7 @@ h1{
     align-items: center;
     width: 100%;
     border-radius: 10px;
+    opacity: 1;
 }
 
 .controls{
@@ -141,11 +142,12 @@ h1{
     width: 90%;
     height: 75%;
     /*border: 1px solid black;*/
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     padding:2%;
     overflow: scroll;
+    opacity: 1;
 }
 
 
@@ -192,16 +194,55 @@ h1{
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 10%;
+    height: 12%;
     align-items: center;
-    border: 2px solid black;
     position: absolute;
     left:800px;
     top:100px;
     justify-content: center;
     transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: rgb(107, 107, 209);
+    color: white;
 }
 
 .date-container{
     margin-bottom: 3%;
+}
+
+
+
+.toolbar{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    height: 20%;
+    justify-content: space-around;
+    position: absolute;
+    top:20%;
+    width:5%;
+}
+
+#line-width{
+    width: 95%;
+}
+
+
+.clear{
+    width: 100%;
+}
+
+.drawing-board{
+    width: 100%;
+    height: 100vh;
+    
+}
+
+#drawing-board{
+    width: 100%;
+    height: 100%;
+   
 }

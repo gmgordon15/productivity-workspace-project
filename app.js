@@ -219,6 +219,87 @@ window.addEventListener("mouseup", () => {
 
 
 
+//Canvas Functionality
+
+const toolbar= document.querySelector(".toolbar")
+const canvas = document.querySelector("#drawing-board")
+const ctx = canvas.getContext('2d')
+
+let isPainting = false
+let lineWidth = 5
+
+let startX;
+let startY;
+
+const canvasOffsetX = canvas.offsetLeft;
+const canvasOffsetY = canvas.offsetTop;
+
+canvas.width = window.innerWidth - canvasOffsetX;
+canvas.height = window.innerHeight - canvasOffsetY;
+
+
+function draw(e){
+    if(!isPainting){
+        return
+    }
+
+    ctx.lineWidth = lineWidth
+    ctx.lineCap = 'round'
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY)
+    ctx.stroke()
+    console.log("canvas")
+    console.log(ctx.lineTo(startX, startY))
+}
+
+
+toolbar.addEventListener("click", function(e){
+    if(e.target.id === 'clear'){
+        ctx.clearRect(0,0, canvas.width, canvas.height)
+        console.log('clear works')
+    }
+})
+
+toolbar.addEventListener('change', function(e){
+    if(e.target.id === 'color'){
+        ctx.strokeStyle = e.target.value
+        console.log('color works')
+    }
+
+    if(e.target.id === 'line-width'){
+        lineWidth = e.target.value
+        console.log('width works')
+    }
+})
+
+
+function draw(e){
+    if(!isPainting){
+        return
+    }
+
+    ctx.lineWidth = lineWidth
+    ctx.lineCap = 'round'
+    ctx.lineTo(e.clientX, e.clientY)
+    ctx.stroke()
+    console.log("working")
+}
+
+
+canvas.addEventListener("mousedown", function(e){
+    isPainting = true
+    startX = e.clientX
+    startY = e.clientY
+})
+
+canvas.addEventListener('mouseup', function(e){
+    isPainting = false
+    ctx.stroke()
+    ctx.beginPath()
+})
+
+canvas.addEventListener('mousemove', draw)
+
+
 
 
 
