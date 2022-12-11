@@ -220,6 +220,7 @@ window.addEventListener("mouseup", () => {
 
 
 //Canvas Functionality
+//Specifically draw functinality
 
 const toolbar= document.querySelector(".toolbar")
 const canvas = document.querySelector("#drawing-board")
@@ -281,7 +282,7 @@ function draw(e){
     ctx.lineCap = 'round'
     ctx.lineTo(e.clientX, e.clientY)
     ctx.stroke()
-    console.log("working")
+    
 }
 
 
@@ -300,6 +301,44 @@ canvas.addEventListener('mouseup', function(e){
 canvas.addEventListener('mousemove', draw)
 
 
+//Text functionality
+//Wherever user clicks on canvas
+//Need to track mouse position on canvas
+//Create Text Input
+//Take Value of Text input and put into ctx.textfill()
+
+
+//Hide Text Editor
+const closeBtn = document.querySelector(".close")
+const closeTodo = document.querySelector(".close-todo")
+
+
+closeBtn.addEventListener('click', function(){
+    wordProcessorContainer.classList.toggle("close-word")
+    if(wordProcessorContainer.classList.contains("close-word")){
+        wordProcessorContainer.style.visiblity = 'hidden'
+    }
+})
+
+closeTodo.addEventListener('click', function(){
+    mydiv.classList.toggle("close-todo")
+    if(mydiv.classList.contains("close-todo")){
+        mydiv.style.visiblity = 'hidden'
+    }
+})
+
+
+
+//Toggle Feature for Side Bar
+const sideBarToggle = document.querySelector(".side-bar-toggle")
+const sideBar = document.querySelector(".side-bar")
+
+sideBarToggle.addEventListener('click', function(){
+    sideBar.classList.toggle('show-side-bar')
+})
+
+
+
 
 
 
@@ -307,7 +346,6 @@ canvas.addEventListener('mousemove', draw)
 
 
   
-
 
 
 
