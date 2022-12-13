@@ -301,31 +301,46 @@ canvas.addEventListener('mouseup', function(e){
 canvas.addEventListener('mousemove', draw)
 
 
-//Text functionality
-//Wherever user clicks on canvas
-//Need to track mouse position on canvas
-//Create Text Input
-//Take Value of Text input and put into ctx.textfill()
+//Drag Function for Canvas Menu
 
 
-//Hide Text Editor
+function dragToolBar(e){
+    toolbar.style.top = e.pageY + "px";
+    toolbar.style.left = e.pageX + "px";
+}
+
+    toolbar.addEventListener("mousedown", function(){
+    window.addEventListener("mousemove", dragToolBar)
+})
+
+window.addEventListener("mouseup", () => {
+    window.removeEventListener("mousemove", dragToolBar);
+  });
+
+
+
+
+
+
 const closeBtn = document.querySelector(".close")
 const closeTodo = document.querySelector(".close-todo")
+const closeToolbarBtn = document.querySelector(".close-toolbar-btn")
 
-
+//Hide Text Editor
 closeBtn.addEventListener('click', function(){
     wordProcessorContainer.classList.toggle("close-word")
-    if(wordProcessorContainer.classList.contains("close-word")){
-        wordProcessorContainer.style.visiblity = 'hidden'
-    }
 })
 
+//Hide Todo list
 closeTodo.addEventListener('click', function(){
-    mydiv.classList.toggle("close-todo")
-    if(mydiv.classList.contains("close-todo")){
-        mydiv.style.visiblity = 'hidden'
-    }
+    mydiv.classList.toggle("close-todo-container")
 })
+
+//Hide Canvas ToolBar
+closeToolbarBtn.addEventListener('click', function(){
+    toolbar.classList.toggle("close-toolbar")
+})
+
 
 
 
@@ -339,14 +354,25 @@ sideBarToggle.addEventListener('click', function(){
 
 
 
+//Functionality for side bar nav
+const wordProcessorNav = document.querySelector("#word-proc-btn")
+const todoNav = document.querySelector("#todo-nav")
+const canvasNav = document.querySelector("#canvas-nav")
 
+wordProcessorNav.addEventListener("click", function(){
+    wordProcessorContainer.classList.remove('close-word')
+    wordProcessorContainer.classList.toggle('open-word')
+})
 
+todoNav.addEventListener("click", function(){
+    mydiv.classList.remove('close-todo-container')
+    mydiv.classList.toggle('open-todo')
+})
 
-
-
-
-  
-
+canvasNav.addEventListener("click", function(){
+    toolbar.classList.remove('close-toolbar')
+    toolbar.classList.toggle('open-toolbar')
+})
 
 
 

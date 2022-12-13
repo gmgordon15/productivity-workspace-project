@@ -6,7 +6,7 @@
 
 
 .todo-container{
-    height: 70%;
+    height: 40%;
     width: 20%;
     position: absolute;
     left: 70%;
@@ -225,7 +225,7 @@ h1{
     top:20%;
     left: 80%;
     width:5%;
-
+    transform: translate(-50%, -50%);
 }
 
 #line-width{
@@ -251,8 +251,16 @@ h1{
 
 
 .close-word{
-   position: absolute;
-   transform: translate(-300%);
+   /*transform: translate(-300%);*/
+   visibility: collapse;
+}
+
+.open-word{
+    visibility: visible;
+}
+
+.open-todo{
+    visibility: visible;
 }
 
 .close-todo{
@@ -260,11 +268,14 @@ h1{
     transform: translate(-300%);
  }
 
+ .close-todo-container{
+     visibility: collapse;
+ }
+
 
  .side-bar{
      display: flex;
      flex-direction: column;
-     border: 1px black solid;
      width: 15%;
      height: 100vh;
      position: absolute;
@@ -272,7 +283,8 @@ h1{
      font-size: large;
      transform: translate(-100%);
      background-color: rgb(238, 238, 227);
-     transition: ease 2s;
+     transition: ease .5s;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
  }
 
  .show-side-bar{
@@ -308,13 +320,28 @@ h1{
 .top-menu{
     position: absolute;
     top:0;
-    height: 4%;
+    height: 3%;
     width: 100%;
-    border:1px solid black;
 }
 
 
 
+.close-toolbar{
+    visibility: collapse;
+}
+ 
+.open-toolbar{
+    visibility: visible;
+}
+ 
 
- 
- 
+.timer-container{
+    display: flex;
+    height: 10%;
+    width: 20%;
+    border: 1px solid black;
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    justify-content: center;
+}
