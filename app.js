@@ -123,6 +123,12 @@ const boldBtn = document.querySelector(".bold")
 const underlineBtn = document.querySelector(".underline")
 const italicsBtn = document.querySelector(".italics")
 const colorSelector = document.querySelector(".color-btn")
+const undoBTN = document.querySelector(".undo")
+const redoBTN = document.querySelector(".redo")
+const fontSizeInput = document.querySelector(".fontsize")
+const unOrderedList = document.querySelector(".unordered-list")
+const OrderedList = document.querySelector(".ordered-list")
+
 
 
 //Text edit functionality
@@ -140,7 +146,38 @@ italicsBtn.addEventListener("click", function(){
 
 colorSelector.addEventListener("input", function(){
     document.execCommand("forecolor", false, colorSelector.value)
+    console.log("working")
 })
+
+undoBTN.addEventListener("click", function(){
+    document.execCommand("undo")
+})
+
+redoBTN.addEventListener("click", function(){
+    document.execCommand("redo")
+})
+
+
+fontSizeInput.addEventListener("change", function(e){
+    let fontValue = fontSizeInput.value
+    content.style.fontSize = fontValue + "px"
+})
+
+unOrderedList.addEventListener("click", function(){
+    document.execCommand("insertUnorderedList")
+})
+
+OrderedList.addEventListener("click", function(){
+    document.execCommand("insertOrderedList")
+})
+
+
+
+
+    
+
+
+
 
 
 
@@ -179,14 +216,13 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 
-
 //Get Date
 window.addEventListener("DOMContentLoaded", function(){
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
     const newDate = new Date();
     let displayMonth = month[newDate.getUTCMonth()]
 
-    document.querySelector(".month").innerHTML = displayMonth
+    document.querySelector(".month").innerHTML = displayMonth 
 
 
     let displayDay = newDate.getUTCDate();
@@ -200,22 +236,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 
-//Drag Function for Time/Date
-let dateContainer = document.querySelector(".time-date-container")
 
-
-function dragDate(e){
-    dateContainer.style.top = e.pageY + "px";
-    dateContainer.style.left = e.pageX + "px";
-}
-
-dateContainer.addEventListener("mousedown", function(){
-    window.addEventListener("mousemove", dragDate)
-})
-
-window.addEventListener("mouseup", () => {
-    window.removeEventListener("mousemove", dragDate);
-  });
 
 
 
@@ -225,6 +246,9 @@ window.addEventListener("mouseup", () => {
 const toolbar= document.querySelector(".toolbar")
 const canvas = document.querySelector("#drawing-board")
 const ctx = canvas.getContext('2d')
+
+
+
 
 let isPainting = false
 let lineWidth = 5
@@ -301,9 +325,9 @@ canvas.addEventListener('mouseup', function(e){
 canvas.addEventListener('mousemove', draw)
 
 
+
+
 //Drag Function for Canvas Menu
-
-
 function dragToolBar(e){
     toolbar.style.top = e.pageY + "px";
     toolbar.style.left = e.pageX + "px";
@@ -328,7 +352,9 @@ const closeToolbarBtn = document.querySelector(".close-toolbar-btn")
 
 //Hide Text Editor
 closeBtn.addEventListener('click', function(){
+    wordProcessorContainer.classList.remove("open-word")
     wordProcessorContainer.classList.toggle("close-word")
+    
 })
 
 //Hide Todo list

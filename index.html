@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body>
 
@@ -14,7 +15,14 @@
     </div>
 
         <div class="top-menu">
-            <button class="side-bar-toggle">Toggle</button>
+            <button class="side-bar-toggle"><i class="fa-sharp fa-solid fa-bars barsSelect"></i></button>
+            <div class="test"></div>
+            
+            <div class="date-container">
+                <span class="month">December </span>
+                <span class="date">19th </span>
+                <span class="year">2022</span>
+            </div>
         </div>
     
 
@@ -23,8 +31,6 @@
                 <h1>Greg's Workspace</h1>
             </header>
                 <ul class="nav-items" class="search-items" id="please-work">
-                    <li id="search">Search</li>
-                    <li id="Youtub-nav">Youtube</li>
                     <li id="Screenshot">Screenshot</li>
                     <li id="word-proc-btn">Word processor</li>
                     <li id="todo-nav">Todo list</li>
@@ -37,7 +43,7 @@
     </aside>
     
 
-
+   
 
     <div class="todo-container">
         <h1>Todo List</h1>
@@ -60,6 +66,13 @@
     <div class="word-process-container">
         <div class="header">
             <div class="menu-container">
+
+                <div class="file-name-close-container">
+                <input type="text" placeholder="" id="file-name" value="Untitled Document">
+                <button class="close">close</button>
+                </div>
+
+                <div class="buttons-container-word">
                 <div class="file-menu">
                     <button class="file main-file">File</button>
                     <div class="dropdown-menu hide-menu">
@@ -68,16 +81,35 @@
                     </div>
                 </div>
 
-                <input type="text" placeholder="File Name" id="file-name">
+                
 
                 <div class="controls">
-                    <button class="bold control-btn">B</button>
-                    <button class="underline control-btn" >U</button>
-                    <button class="italics control-btn">I</button>
-                    <input type="color" name="" id="color-input" class="control-btn color-btn">
-                </div>
+                    <div class="undo-group group">
+                        <button class="undo control-btn"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button class="redo control-btn"><i class="fa-solid fa-rotate-right"></i></button>
+                    </div>
 
-                <button class="close">close</button>
+                    <div class="fontsize-group group">
+                        <input type="number" class="fontsize control-btn" value="12">
+                    </div>
+
+                    <div class="bold-undeerline-group group">
+                        <button class="bold control-btn"><i class="fa-solid fa-bold"></i></button>
+                        <button class="underline control-btn"><i class="fa-solid fa-underline"></i></button>
+                        <button class="italics control-btn"><i class="fa-solid fa-italic"></i></button>
+                    </div>
+
+                    <div class="list-group group">
+                        <button class="unordered-list control-btn"><i class="fa-solid fa-list"></i></button>
+                        <button class="ordered-list control-btn"><i class="fa-solid fa-list-ol"></i></button>
+                    </div>
+
+                    <div class="color-group group">
+                        <input type="color" name="" id="color-input" class="control-btn color-btn">
+                    </div>
+                </div>
+            </div>
+                
             </div>
         </div>
 
@@ -101,28 +133,7 @@
 
     </div>
 
- 
 
-
-    <div class="time-date-container">
-        <div class="date-container">
-            <span class="month">December</span>
-            <span class="date">19th</span>
-            <span class="year">2022</span>
-        </div>
-
-        <div class="test"></div>
-    </div>
-
-
-    
-
-    
-
-
-
-    
-        
     
 
     <script src="app.js"></script>
