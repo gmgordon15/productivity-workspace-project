@@ -263,6 +263,14 @@ canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
 
+
+
+
+
+
+
+
+
 function draw(e){
     if(!isPainting){
         return
@@ -325,6 +333,18 @@ canvas.addEventListener('mouseup', function(e){
 canvas.addEventListener('mousemove', draw)
 
 
+const textBTN = document.querySelector(".text")
+
+textBTN.addEventListener('click', function(e){
+    let newTextDiv = canvas.createElement('div')
+    newTextDiv.classList.add('newTextDiv')
+    console.log('this works')
+})
+
+
+
+
+
 
 
 //Drag Function for Canvas Menu
@@ -374,9 +394,10 @@ closeToolbarBtn.addEventListener('click', function(){
 const sideBarToggle = document.querySelector(".side-bar-toggle")
 const sideBar = document.querySelector(".side-bar")
 
-sideBarToggle.addEventListener('click', function(){
+sideBarToggle.addEventListener('mouseover', function(){
     sideBar.classList.toggle('show-side-bar')
 })
+
 
 
 

@@ -16,28 +16,31 @@
 
         <div class="top-menu">
             <button class="side-bar-toggle"><i class="fa-sharp fa-solid fa-bars barsSelect"></i></button>
-            <div class="test"></div>
             
+            
+            <input type="text" value="project name" class="project-name-input">
+
+
             <div class="date-container">
                 <span class="month">December </span>
                 <span class="date">19th </span>
                 <span class="year">2022</span>
             </div>
+
+            <div class="test"></div>
         </div>
     
 
     <aside class="side-bar">
             <header>
-                <h1>Greg's Workspace</h1>
+                <h1 class="sidebar-name">Menu</h1>
             </header>
                 <ul class="nav-items" class="search-items" id="please-work">
-                    <li id="Screenshot">Screenshot</li>
+                    
                     <li id="word-proc-btn">Word processor</li>
                     <li id="todo-nav">Todo list</li>
                     <li id="canvas-nav">Canvas</li>
-                    <li>Clock</li>
-                    <li>Timer</li>
-                    <li>Alarm</li>
+                    
                 </ul>
         
     </aside>
@@ -69,7 +72,7 @@
 
                 <div class="file-name-close-container">
                 <input type="text" placeholder="" id="file-name" value="Untitled Document">
-                <button class="close">close</button>
+                <button class="close"><i class="fa-solid fa-x"></i></button>
                 </div>
 
                 <div class="buttons-container-word">
@@ -121,16 +124,19 @@
 
     <div class="toolbar">
 
-        <button class="close-toolbar-btn">Close</button>
-        <label for="color">Color</label>
-        <input type="color" name="color" id="color">
-
-        <label for="line-width">Line Width</label>
-        <input type="number" id="line-width" value="5">
-
-        <button class="clear" id="clear">Clear</button>
-        <button class="text">Text</button>
-
+        <button class="close-toolbar-btn"><i class="fa-solid fa-x"></i></button>
+        <div class="color-div">
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color">
+         </div>
+         <div class="line-width-div">
+            <label for="line-width">Line Width</label>
+            <input type="number" id="line-width" value="5">
+        </div>
+        
+            <button class="clear" id="clear"><i class="fa-solid fa-trash"></i></button>
+            <button class="text"><i class="fa-solid fa-font"></i></button>
+        
     </div>
 
 
